@@ -8,22 +8,26 @@
 = stylesheet_link_tag "application"
 = csrf_meta_tags
 %body
-.navbar
-.navbar-inner
-.container-fluid
-= link_to "Sodibee", root_path, :class => 'brand'
-%ul.nav
-%li.dropdown
-  %a.dropdown-toggle{ :href => '#', "data-toggle" => "dropdown"}
-  ="Authors"
-  %b.caret
-  %ul.dropdown-menu
-    %li= link_to "List Authors", authors_path
-    %li= link_to "New Author", new_author_path
-    %li= link_to "Orders", orders_path
-    %li= link_to "New Order", new_order_path
-    .container
-      .content
-      = yield
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container-fluid
+    .navbar-header
+      = link_to "Sodibee", root_path, :class => 'brand'
+      %ul.nav
+      .dropdown
+        %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+          Authors
+          %span.caret
+        %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1", :role => "menu"}
+          %li{:role => "presentation"}
+            = link_to "List Authors", authors_path,  html_options: {:role => "menuitem", :tabindex => "-1"}
+          %li{:role => "presentation"}
+            = link_to "New Author", new_author_path, html_options: {:role => "menuitem", :tabindex => "-1"}
+          %li{:role => "presentation"}
+            = link_to "Orders", orders_path, html_options: {:role => "menuitem", :tabindex => "-1"}
+          %li{:role => "presentation"}
+            = link_to "New Order", new_order_path, html_options: {:role => "menuitem", :tabindex => "-1"}
+.container
+.content
+= yield
 .footer
-%p Packt Publishing &copy; Company 2011
+%p Library mongo test
