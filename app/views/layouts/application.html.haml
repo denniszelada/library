@@ -14,16 +14,16 @@
 = link_to "Sodibee", root_path, :class => 'brand'
 %ul.nav
 %li.dropdown
-%a.dropdown-toggle{ :href => '#', "data-toggle" => "dropdown"}
-="Authors"
-%b.caret
-%ul.dropdown-menu
-%li= link_to "List Authors", authors_path
-%li= link_to "New Author", new_author_path
-%li= link_to "Orders", orders_path
-%li= link_to "New Order", new_order_path
-.container
-.content
-= yield
+  %a.dropdown-toggle{ :href => '#', "data-toggle" => "dropdown"}
+  ="Authors"
+  %b.caret
+  %ul.dropdown-menu
+    %li= link_to "List Authors", authors_path
+    %li= link_to "New Author", new_author_path
+    %li= link_to "Orders", orders_path
+    %li= link_to "New Order", new_order_path
+    .container
+      .content
+      = yield
 .footer
 %p Packt Publishing &copy; Company 2011
