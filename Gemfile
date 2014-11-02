@@ -25,12 +25,11 @@ gem 'nested_form', :git => 'git://github.com/ryanb/nested_form.git'
 gem 'simple_form'
 
 #Rails Asset pipeline
-group :assets do
-  gem 'sass-rails', '~> 4.0.3'
-  gem 'coffee-rails'
-  gem 'bootstrap-sass'
-  gem 'uglifier', '>= 1.3.0'
-end
+
+gem 'sass-rails', '~> 4.0.3'
+gem 'coffee-rails'
+gem 'uglifier', '>= 1.3.0'
+
 
 group :development, :test do
   gem 'rspec-rails'

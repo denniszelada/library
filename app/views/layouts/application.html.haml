@@ -1,0 +1,33 @@
+!!!
+%html{:lang => :en}
+%head
+%meta{:charset => "utf-8"}/
+%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+%title Sodibee Library Manager
+= javascript_include_tag "application"
+= stylesheet_link_tag "application"
+= csrf_meta_tags
+%body
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container-fluid
+    .navbar-header
+      = link_to "Sodibee", root_path, :class => 'brand'
+      %ul.nav
+      .dropdown
+        %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+          Authors
+          %span.caret
+        %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1", :role => "menu"}
+          %li{:role => "presentation"}
+            = link_to "List Authors", authors_path,  html_options: {:role => "menuitem", :tabindex => "-1"}
+          %li{:role => "presentation"}
+            = link_to "New Author", new_author_path, html_options: {:role => "menuitem", :tabindex => "-1"}
+          %li{:role => "presentation"}
+            = link_to "Orders", orders_path, html_options: {:role => "menuitem", :tabindex => "-1"}
+          %li{:role => "presentation"}
+            = link_to "New Order", new_order_path, html_options: {:role => "menuitem", :tabindex => "-1"}
+.container
+.content
+= yield
+.footer
+%p Library mongo test
